@@ -15,6 +15,7 @@ typedef enum {
 void traffic_light_init(void);
 void traffic_light_set_state(TrafficLightState state);
 TrafficLightState traffic_light_get_state(void);
+const char* traffic_light_get_state_name(void);
 
 
 #endif

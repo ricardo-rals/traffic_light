@@ -16,7 +16,7 @@ int main() {
     // Loop principal
     while (true) {
         // Imprime o estado atual do semáforo a cada segundo
-        printf("Estado atual do semáforo: %d\n", traffic_light_get_state());
+        printf("Estado atual do semáforo: %s\n", traffic_light_get_state_name());
         sleep_ms(1000);
     }
 

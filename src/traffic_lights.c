@@ -2,7 +2,6 @@
 
 static TrafficLightState currentState = RED;
 
-
 void traffic_light_init(void) {
     gpio_init(LED_RED);
     gpio_init(LED_YELLOW);
@@ -36,4 +35,17 @@ void traffic_light_set_state(TrafficLightState state) {
 
 TrafficLightState traffic_light_get_state(void) {
     return currentState;
+}
+
+const char* traffic_light_get_state_name(void) {
+    switch (currentState) {
+        case RED:
+            return "Vermelho";
+        case YELLOW:
+            return "Amarelo";
+        case GREEN:
+            return "Verde";
+        default:
+            return "Desconhecido";
+    }
 }
