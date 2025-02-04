@@ -35,7 +35,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(traffic_light traffic_light.c )
+add_executable(traffic_light traffic_light.c src/leds.c src/traffic_lights.c)
 
 pico_set_program_name(traffic_light "traffic_light")
 pico_set_program_version(traffic_light "0.1")
@@ -46,6 +46,8 @@ pico_enable_stdio_usb(traffic_light 1)
 
 # Add the standard library to the build
 target_link_libraries(traffic_light
+        hardware_timer 
+        hardware_gpio
         pico_stdlib)
 
 # Add the standard include files to the build
